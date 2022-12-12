@@ -8,13 +8,11 @@ public class UserName {
 	
 	public void getUserName() {
 		Quiz quiz= new Quiz();
-		
-		
+	
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter how many students want to give exam ");
 		int no = sc.nextInt();
-		String userName = "groupa";
-		String pass="Welcome";
+	    String pass="Welcome";
 		
 		
 		for(int i=1;i<=no; i++) {	
@@ -24,7 +22,7 @@ public class UserName {
 	       System.out.println("Enter password");
 	       String password =sc.next();
 	    
-	       if(userName.equals(username) && pass.equals(password)) { //check the user name and password
+	       if(username.equals(username) && pass.equals(password)) { //check the user name and password
 	    	
 	       System.out.println("******  Exam Started  ******");
 		   quiz.getQuestion();
@@ -33,8 +31,7 @@ public class UserName {
 	           }
 	    
 			}
-		
-		
+
 	}
 	}
 

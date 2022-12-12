@@ -3,6 +3,7 @@ package demo1;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Quiz {
 
@@ -49,10 +50,11 @@ public class Quiz {
 
 		GradeClass gd = new GradeClass();
 		Scanner sc = new Scanner(System.in);
-		int correctAns = 0;
-		int wrongAns = 0;
+		int correctCount = 0;
+		int wrongCount = 0;
 		
-		for (Map.Entry<Question, Integer> map : mp.entrySet()) {
+		for (Map.Entry<Question,Integer> map : mp.entrySet()) {
+	               
 			System.out.println(map.getKey().getQuestion());
 			System.out.println(map.getKey().getOption1());
 			System.out.println(map.getKey().getOption2());
@@ -61,20 +63,20 @@ public class Quiz {
 
 			System.out.println("Enter your Ans");
 			int userans = sc.nextInt();
-			int cans = Integer.compare(userans, map.getValue());
-			if (cans == 0) {
+			int comparedAns = Integer.compare(userans, map.getValue());
+			if (comparedAns == 0) {
 				System.out.println("Selected ans is correct");
-				correctAns++;
+				correctCount++;
 			} else {
 				System.out.println("Selected ans is wrong");
-				wrongAns++;
+				wrongCount++;
 			}                                                   
 		}
 		System.out.println("***** Exam End *****");
-		System.out.println("You entered Correct Answer= " + correctAns);
-		System.out.println("You entered Wrong Answer =  " + wrongAns);
-		System.out.println("Your Score out of 10 is ...." + correctAns);
-		Total = correctAns;
+		System.out.println("You entered Correct Answer= " + correctCount);
+		System.out.println("You entered Wrong Answer =  " + wrongCount);
+		System.out.println("Your Score out of 10 is ...." + correctCount);
+		Total = correctCount;
 		
 		
 		gd.getGrademethod();
